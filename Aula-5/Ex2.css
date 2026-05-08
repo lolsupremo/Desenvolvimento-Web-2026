@@ -1,0 +1,53 @@
+
+
+div{
+
+    height: 100px;
+
+}
+
+.vermelho{
+
+    background-color: red;
+    width: 100px;
+
+}
+.verde{
+
+    background-color: green;
+    width: 300px;
+
+}
+.azul{
+
+    background-color: blue;
+    width: 200px;
+
+}
+
+
+.caixa1{
+
+    width: 50vw;
+    height: 50vh;
+    background-color: chartreuse;
+    border: solid 1px;
+
+}
+
+.caixa2{
+
+    width: 50%;
+    height: calc(100% - 50px);
+    background-color: blueviolet;
+    border: solid 1px;
+
+}
+footer{
+
+    width: 50vw;
+    height: 50px;
+    background-color: slateblue;
+    border: solid 1px;
+
+}

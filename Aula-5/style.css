@@ -1,0 +1,75 @@
+body {
+
+    background-color: lightgray;
+
+}
+
+p {
+
+    color: white;
+
+}
+
+.destaque p {
+
+    background-color: aqua;
+
+
+}
+
+@font-face {
+
+    font-family: 'NomeDaMinhaFonte';
+    src: url('OldEgyptGlyphs.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1 {
+    font-family: 'NomeDaMinhaFonte', serif;
+}
+
+ul.menu li {
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+ul.menu li:first-child{
+
+background-color: cornsilk;
+
+}
+
+ul.menu li:last-child{
+
+background-color: indigo;
+
+}
+
+ul.menu2 li:nth-child(even){
+
+background-color: indigo;
+
+}
+
+ul.menu2 li:nth-child(odd){
+
+background-color: mediumseagreen;
+
+}
+
+ul.menu2 li:hover {
+
+background-color: gold;
+
+transition: all ease 0.5s;
+
+}
+
+h2+p {
+
+    color: navy;
+
+}
