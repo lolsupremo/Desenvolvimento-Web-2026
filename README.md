@@ -40,6 +40,9 @@ Este repositório contém todas as atividades, projetos e exercícios desenvolvi
 | **Aula 7** | 🌀 Gravidade | Orientação de caixas | [Ver atividade](./Aula-7/) |
 | **Atividade 1** | 👤 Portfólio | Portfólio para o autobot Lionis Prime | [Ver portfólio](./Curriculo-enferrujavel/) |
 | **Atividade 2** | 😏 Safadometro | Sistema para descobrir o quanto você é safado | [Ver atividade](./Safadometro/) |
+| **Atividade 3** | 📝 Formulario | Formulario basico para filtragem de pessoas | [Ver atividade](./Formulario/) |
+| **Atividade 4** | 📝 Layouts | Utilização do "santo grau" de organização do html e css | [Ver atividade](./Layout-Atividade/) |
+
 ---
 
 ## 🎨 Tecnologias Utilizadas
