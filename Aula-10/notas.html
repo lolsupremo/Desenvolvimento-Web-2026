@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="conteiner">
+
+        <h1>Minhas notas</h1>
+
+        <!-- passo 1 criar entrada -->
+
+        <div class="entrada">
+
+            <input type="text" id="nota" placeholder="digite uma nota...">
+            <button id="btnAdicionar">adicionar</button>
+
+        </div>
+
+        <!-- passo 2: apresentar as notas -->
+
+        <ul id="ListaNotas">
+
+            <!-- Vazio -->
+
+        </ul>
+
+        <button id ="Limpar">Limpas todas as notas</button>
+    </div>
+
+    <script>
+
+        // ELEMENTOS HTML
+
+        const listaNotas = document.querySelector("#ListaNotas");
+
+        const campoNota = document.querySelector('#nota')
+
+        const btnAdicionar = document.querySelector('#btnAdicionar')
+
+        const btnLimpar = document.querySelector('#Limpar');
+
+        // CARREGAR NOTAS  
+
+        let notas = JSON.parse(localStorage.getItem('notas'));
+
+        if (notas == null) {
+
+            notas = []
+
+        }
+
+        function addNota() {
+            const texto = campoNota.value.trim();
+
+            if (texto == "") {
+
+                alert('digite alguma coisa');
+                return;
+
+            }
+
+            const novaNota = {
+                texto: texto,
+                concluida: false
+
+            };
+
+            notas.push(novaNota);
+
+            localStorage.setItem('notas', JSON.stringify(notas));
+            campoNota.value = "";
+
+            exibirNotas()
+        }
+
+        // EXIBIT NOTAS
+
+        function exibirNotas() {
+            listaNotas.innerHTML = "";
+
+            if (notas.length == 0) {
+
+                listaNotas.textContent = 'nehuma nota cadastrada';
+
+                return;
+
+            }
+
+            notas.forEach(function (nota, indice) {
+
+                const elementoNota = document.createElement('li');
+
+                const texto = document.createElement('span');
+
+                texto.textContent = nota.texto;
+
+                texto.classList.add('texto-nota');
+
+                if (nota.concluida) {
+                    texto.classList.add('concluida')
+                }
+
+                const btnRemover = document.createElement('button');
+
+                btnRemover.textContent = 'Remover';
+
+                btnRemover.addEventListener('click', function () {
+                    removerNota(indice);
+                })
+
+
+
+                elementoNota.appendChild(texto);
+                elementoNota.appendChild(btnRemover);
+                listaNotas.appendChild(elementoNota);
+
+
+
+            }
+
+            )
+
+        }
+
+        function removerNota(indice) {
+
+            notas.splice(indice, 1)
+
+            localStorage.setItem(
+                "notas",
+                JSON.stringify(notas)
+            )
+
+            exibirNotas();
+
+        }
+
+        function LimparNotas() {
+            notas = [];
+
+            localStorage.setItem('notas', JSON.stringify(notas));
+
+        }
+        // EVENTOS
+
+        btnAdicionar.addEventListener('click', addNota);
+        btnLimpar.addEventListener('click', function() {
+            LimparNotas();
+            exibirNotas();
+        })
+
+        // Mostrar notas ao carregar a página
+        exibirNotas();
+
+
+
+    </script>
+
+</body>
+
+</html>
