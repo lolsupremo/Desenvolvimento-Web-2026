@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preferencias</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            transition: 0.3s;
+        }
+
+        body.claro {
+            background-color: white;
+            color: black;
+        }
+
+        body.escuro {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form id="FormPreferencias">
+
+        <div class="grupo">
+            <label for="tema">
+                Tema:
+            </label>
+            <select name="" id="tema">
+                <option value="claro">
+                    Claro
+                </option>
+                <option value="escuro">
+                    Escuro
+                </option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <button id="bntSalvar">Salvar</button>
+        </div>
+
+    </form>
+
+    <script>
+
+        const body = document.querySelector("body");
+        const form = document.querySelector("#FormPreferencias");
+        const tema = document.querySelector("#tema");
+
+        form.addEventListener('submit', function (evento) {
+            evento.preventDefault();
+            const temaSelecionado = tema.value;
+            body.classList.remove("claro", "escuro");
+            body.classList.add(temaSelecionado);
+        })
+    </script>
+
+</body>
+
+</html>

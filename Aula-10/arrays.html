@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let frutas = ["abacaxi", "banana", "caju"];
+
+        frutas.push("damasco");
+
+        frutas[4] = "figo";
+
+        for( let fru of frutas){
+            console.log(fru);
+        }
+
+        let itens_interesse = {
+           'numero_intens': 3,
+              'itens': ["panela 1", "panela 2", "sapato 3"]
+        }
+
+        localStorage.setItem("itens_interesse", JSON.stringify(itens_interesse));
+
+    </script>
+</body>
+</html>
