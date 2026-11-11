@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background:
+        radial-gradient(ellipse at top, #34425e 0%, transparent 58%),
+        #141a27;
+    color: #202638;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carta {
+    --cor-tipo: #a8a878;
+
+    position: relative;
+    width: min(100%, 360px);
+    padding: 18px;
+    overflow: hidden;
+    border: 8px solid #e8cf83;
+    border-radius: 20px;
+    background: linear-gradient(155deg, #fffdf5 0%, #f5efd9 58%, var(--cor-tipo) 180%);
+    box-shadow:
+        0 0 0 2px #8e7134,
+        0 16px 35px #0008,
+        inset 0 0 0 2px #fff9;
+    transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.carta:hover {
+    transform: translateY(-4px) rotate(-0.5deg);
+}
+
+.carta h2 {
+    display: inline-block;
+    max-width: 75%;
+    margin: 0 0 12px;
+    color: #202638;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+#numeroPokemon {
+    float: right;
+    margin: 5px 0 0;
+    color: #5b6270;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+#imgPokemon {
+    display: block;
+    width: 100%;
+    height: 220px;
+    margin: 0 auto 14px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background:
+        radial-gradient(ellipse at center, #fff9 0%, #fff3 48%, transparent 72%),
+        var(--cor-tipo);
+    object-fit: contain;
+    image-rendering: pixelated;
+    box-shadow: inset 0 0 0 1px #0002, 0 2px 6px #0002;
+}
+
+#tipoPokemon,
+#tipoSegundarioPokemon {
+    display: inline-block;
+    margin: 0 5px 14px 0;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--cor-tipo);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px #0005;
+}
+
+#tipoSegundarioPokemon:empty {
+    display: none;
+}
+
+#alturaPokemon,
+#pesoPokemon {
+    display: inline-block;
+    width: calc(50% - 4px);
+    margin: 0 0 14px;
+    color: #5b6270;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#hpPokemon,
+#ataquePokemon,
+#defesaPokemon,
+#velocidadePokemon {
+    display: inline-block;
+    width: calc(50% - 5px);
+    margin: 4px 0;
+    padding: 9px 10px;
+    border-radius: 8px;
+    background: #fff9;
+    color: #333b4e;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+#ataquePokemon,
+#velocidadePokemon {
+    margin-left: 6px;
+}
+
+.entrada {
+    display: flex;
+    width: min(100%, 360px);
+    gap: 10px;
+}
+
+.entrada input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 15px;
+    border: 1px solid #ffffff35;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #202638;
+    font: inherit;
+}
+
+.entrada input:focus {
+    border-color: #e8cf83;
+    box-shadow: 0 0 0 3px #e8cf8340;
+}
+
+.entrada button {
+    padding: 0 18px;
+    border: 0;
+    border-radius: 10px;
+    background: #e8cf83;
+    color: #292313;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    text-transform: capitalize;
+    transition: filter 150ms ease, transform 150ms ease;
+}
+
+.entrada button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.carta[data-tipo="normal"] { --cor-tipo: #a8a878; }
+.carta[data-tipo="fire"] { --cor-tipo: #f08030; }
+.carta[data-tipo="water"] { --cor-tipo: #6890f0; }
+.carta[data-tipo="electric"] { --cor-tipo: #f8d030; }
+.carta[data-tipo="grass"] { --cor-tipo: #78c850; }
+.carta[data-tipo="ice"] { --cor-tipo: #98d8d8; }
+.carta[data-tipo="fighting"] { --cor-tipo: #c03028; }
+.carta[data-tipo="poison"] { --cor-tipo: #a040a0; }
+.carta[data-tipo="ground"] { --cor-tipo: #e0c068; }
+.carta[data-tipo="flying"] { --cor-tipo: #a890f0; }
+.carta[data-tipo="psychic"] { --cor-tipo: #f85888; }
+.carta[data-tipo="bug"] { --cor-tipo: #a8b820; }
+.carta[data-tipo="rock"] { --cor-tipo: #b8a038; }
+.carta[data-tipo="ghost"] { --cor-tipo: #705898; }
+.carta[data-tipo="dragon"] { --cor-tipo: #7038f8; }
+.carta[data-tipo="dark"] { --cor-tipo: #705848; }
+.carta[data-tipo="steel"] { --cor-tipo: #b8b8d0; }
+.carta[data-tipo="fairy"] { --cor-tipo: #ee99ac; }
+
+@media (max-width: 420px) {
+    body {
+        padding: 28px 14px;
+    }
+
+    .carta {
+        padding: 14px;
+    }
+
+    #imgPokemon {
+        height: 190px;
+    }
+}

@@ -21,6 +21,7 @@
         const AtaquePokemon = document.querySelector('#ataquePokemon');
         const DefesaPokemon = document.querySelector('#defesaPokemon');
         const VelocidadePokemon = document.querySelector('#velocidadePokemon');
+        const cartaPokemon = document.querySelector('.carta');
 
 
 
@@ -38,6 +39,7 @@
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
                 .then(resposta => resposta.json())
                 .then(dados => {
+                    cartaPokemon.dataset.tipo = dados.types[0].type.name;
                     NomePokemon.textContent = dados.name;
                     NumeroPokemon.textContent = "#" + dados.id;
                     ImgPokemon.src = dados.sprites.front_default;
@@ -57,7 +59,6 @@
         }
 
         btnAdicionar.addEventListener('click', SelecionarPokemon);
-
 
 
 
